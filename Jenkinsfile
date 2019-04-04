@@ -20,8 +20,8 @@ node{
       }  
    
       stage('Publish Docker Image'){
-         withCredentials([string(credentialsId: 'nitishk2608', variable: 'dockerPWD-nitish')]) {
-              sh "docker login -u nitishk2608 -p ${dockerPWD}"
+         withCredentials([string(credentialsId: '26!MOODLe', variable: 'dockerPWD-nitish')]) {
+              sh "docker login -u nitishk2608 -p ${dockerPWD-nitish}"
          }
         sh 'docker push nitish/javademoapp_$JOB_NAME:$BUILD_NUMBER'
         sh "sed -i.bak 's/#BUILD-NUMBER#/$BUILD_NUMBER/' deployment.yaml"
